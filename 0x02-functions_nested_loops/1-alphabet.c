@@ -7,7 +7,7 @@
  */
 
 void print_alphabet(void);
-int main(void)
+int main()
 {
 	char print_alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
