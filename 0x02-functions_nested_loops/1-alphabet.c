@@ -1,20 +1,19 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - print the alphabets in small letters and in capital letters.
- *
- * Return: Always 0.
- */
+  * print_alphabet - Make the alphabet
+  *
+  * Return: void
+  */
 
 void print_alphabet(void)
-
 {
-	char print_alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
-	int i;
+	char c;
 
-	for (i = 0; i < 26; i++)
+	for (c = 'a'; c <= 'z'; c++)
 	{
-	putchar(print_alphabet[i]);
+		_putchar(c);
 	}
-	putchar('\n');
+
+	_putchar('\n');
 }
