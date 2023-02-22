@@ -6,8 +6,8 @@
  * Return: Always 0.
  */
 
-void print_alphabet(void);
-int main(void)
+void print_alphabet(void)
+
 {
 	char print_alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
@@ -17,5 +17,4 @@ int main(void)
 	putchar(print_alphabet[i]);
 	}
 	putchar('\n');
-	return (0);
 }
