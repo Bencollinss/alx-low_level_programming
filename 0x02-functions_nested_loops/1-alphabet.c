@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Entry point
+ * main - print the alphabets in small letters and in capital letters.
  *
  * Return: Always 0.
  */
@@ -9,11 +9,10 @@
 void print_alphabet(void)
 
 {
-	char c;
+	char letter;
 
-	for (c = 'a'; c <= 'z'; c++)
-	{
-		putchar(c);
-	}
-	putchar('\n');
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
+
+	_putchar('\n');
 }
