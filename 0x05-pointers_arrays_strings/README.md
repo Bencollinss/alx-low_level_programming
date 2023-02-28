@@ -48,7 +48,7 @@ $ julien@ubuntu:~/0x05$
 
 ## Don't swap horses in crossing a stream
 
-Write a function that swaps the values of two integers.
+Write a function that swaps the values of two integers
 
 * Prototype: `void swap_int(int *a, int *b);`
 
@@ -62,7 +62,7 @@ $ julien@ubuntu:~/0x05$ cat 1-main.c
 /**
  * main - check the code
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
@@ -144,6 +144,69 @@ int main(void)
 $ julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 3-main.c 3-puts.c -o 3-puts
 $ julien@ubuntu:~/0x05$ ./3-puts 
 I do not fear computers. I fear the lack of them - Isaac Asimov
+$ julien@ubuntu:~/0x05$
+```
+## I can only go one way. I've not got a reverse gear
+
+Write a function that prints a string, in reverse, followed by a new line.
+
+* Prototype: `void print_rev(char *s);`
+
+**Solution:** [4-print_rev.c] (https://github.com/Bencollinss/alx-low_level_programming/blob/master/0x05-pointers_arrays_strings/4-print_rev.c)
+
+```
+$ julien@ubuntu:~/0x05$ cat 4-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char *str;
+
+    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+    print_rev(str);
+    return (0);
+}
+$ julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 4-main.c 4-print_rev.c -o 4-print_rev
+$ julien@ubuntu:~/0x05$ ./4-print_rev 
+vomisA caasI - meht fo kcal eht raef I .sretupmoc raef ton od I
+$ julien@ubuntu:~/0x05$
+```
+## A good engineer thinks in reverse and asks himself about the stylistic consequences of the components and systems he proposes
+
+Write a function that reverses a string
+
+* Prototype: `void rev_string(char *s);`
+
+**Solution:** [5-rev_string.c] (https://github.com/Bencollinss/alx-low_level_programming/blob/master/0x05-pointers_arrays_strings/4-rev_string.c)
+
+```
+$ julien@ubuntu:~/0x05$ cat 5-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char s[10] = "My School";
+
+    printf("%s\n", s);
+    rev_string(s);
+    printf("%s\n", s);
+    return (0);
+}
+$ julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 5-rev_string.c -o 5-rev_string
+$ julien@ubuntu:~/0x05$ ./5-rev_string 
+My School
+loohcS yM
 $ julien@ubuntu:~/0x05$
 ```
 
