@@ -17,4 +17,6 @@ and updates the value it points to to `98`.
 
 * Prototype: `void reset_to_98(int *n);`
 
-**Solution:** [0-reset_to_98.c] (
+**Solution:** [0-reset_to_98.c] (https://github.com/Bencollinss/alx-low_level_programming/blob/master/0x05-pointers_arrays_strings/0-reset_to_98.c)
+
+```

@@ -2,6 +2,7 @@
 
 /**
  * reset_to_n - updates the value it points to 98
+ *@n: Pointer to n
  *
  * Return: void
  */
