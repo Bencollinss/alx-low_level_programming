@@ -45,3 +45,105 @@ n=402
 n=98
 $ julien@ubuntu:~/0x05$ 
 ```
+
+## Don't swap horses in crossing a stream
+
+Write a function that swaps the values of two integers.
+
+* Prototype: `void swap_int(int *a, int *b);`
+
+**Solution:** [1-swap.c] (https://github.com/Bencollinss/alx-low_level_programming/blob/master/0x05-pointers_arrays_strings/1-swap.c)
+
+```
+$ julien@ubuntu:~/0x05$ cat 1-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int a;
+    int b;
+
+    a = 98;
+    b = 42;
+    printf("a=%d, b=%d\n", a, b);
+    swap_int(&a, &b);
+    printf("a=%d, b=%d\n", a, b);
+    return (0);
+}
+$ julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-swap.c -o 1-swap
+$ julien@ubuntu:~/0x05$ ./1-swap 
+a=98, b=42
+a=42, b=98
+$ julien@ubuntu:~/0x05$
+
+```
+## This report, by its very length, defends itself against the risk of being read
+
+Write a function that returns the length of a string.
+
+* Prototype: `int _strlen(char *s);`
+
+**Solution:** [2-strlen.c] (https://github.com/Bencollinss/alx-low_level_programming/blob/master/0x05-pointers_arrays_strings/2-strlen.c)
+
+```
+$julien@ubuntu:~/0x05$ cat 2-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char *str;
+    int len;
+
+    str = "My first strlen!";
+    len = _strlen(str);
+    printf("%d\n", len);
+    return (0);
+}
+$ julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-strlen.c -o 2-strlen
+$ julien@ubuntu:~/0x05$ ./2-strlen 
+16
+$ julien@ubuntu:~/0x05$
+```
+## I do not fear computers. I fear the lack of them
+
+Write a function that prints a string, followed by a new line, to `stdout`.
+
+* Prototype: `void _puts(char *str);`
+
+**Solution:** [3-puts.c] (https://github.com/Bencollinss/alx-low_level_programming/blob/master/0x05-pointers_arrays_strings/3-puts.c)
+
+```
+$ julien@ubuntu:~/0x05$ cat 3-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char *str;
+
+    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+    _puts(str);
+    return (0);
+}
+$ julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 3-main.c 3-puts.c -o 3-puts
+$ julien@ubuntu:~/0x05$ ./3-puts 
+I do not fear computers. I fear the lack of them - Isaac Asimov
+$ julien@ubuntu:~/0x05$
+```
+
