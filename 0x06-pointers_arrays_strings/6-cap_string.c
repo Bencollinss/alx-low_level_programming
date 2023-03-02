@@ -2,13 +2,12 @@
 #include <stdio.h>
 
 /**
- * cap_string - A function that capitalizes all words of a string
- *@s: The character
- *
- * Return: char value
- */
-
-char *cap_string(char *)
+  * cap_string - ...
+  * @s: ...
+  *
+  * Return: char value
+  */
+char *cap_string(char *s)
 {
 	int a = 0, i;
 	int cspc = 13;
