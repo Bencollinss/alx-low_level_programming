@@ -1,15 +1,17 @@
-#include "unistd.h"
+#include "main.h"
 
 /**
- * _isupper - uppercase letters
- * @c: char to check
- *
- * Return: 0 or 1
- */
-int _isupper(int c)
+  * _isupper - Check if a letter is upper
+  * @z: The number to be checked
+  *
+  * Return: 1 for upper letter or 0 for any else
+  */
+int _isupper(int z)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (z >= 65 && z <= 90)
+	{
 		return (1);
-	else
+	}
+
 	return (0);
 }
