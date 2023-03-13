@@ -8,7 +8,7 @@
   */
 int _isupper(int z)
 {
-	if (z >= 65 && z <= 90)
+	if (z >= 'A' && z <= 'Z')
 	{
 		return (1);
 	}
