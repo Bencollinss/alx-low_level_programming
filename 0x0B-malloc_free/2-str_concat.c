@@ -1,52 +1,54 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
-  * alloc_grid - ...
-  * @width: ...
-  * @height: ...
-  *
-  * Return: ...
-  */
-int **alloc_grid(int width, int height)
+ * str_concat - a function that concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: the two string concatenated
+ */
+
+char *str_concat(char *s1, char *s2)
 {
-	int i, j, k, l;
-	int **a;
+	int i = 0, j = 0, k = 0, l = 0;
+	char *s;
 
-	if (width <= 0 || height <= 0)
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[i])
+		i++;
+
+	while (s2[j])
+		j++;
+
+	l = i + j;
+	s = malloc((sizeof(char) * l) + 1);
+
+	if (s == NULL)
 		return (NULL);
 
-	a = malloc(sizeof(int *) * height);
+	j = 0;
 
-	if (a == NULL)
+	while (k < l)
 	{
-		free(a);
-		return (NULL);
-	}
+		if (k <= i)
+			s[k] = s1[k];
 
-	for (i = 0; i < height; i++)
-	{
-		a[i] = malloc(sizeof(int) * width);
-
-		if (a[i] == NULL)
+		if (k >= i)
 		{
-			for (j = i; j >= 0; j--)
-			{
-				free(a[j]);
-			}
-
-			free(a);
-			return (NULL);
+			s[k] = s2[j];
+			j++;
 		}
+
+		k++;
 	}
 
-	for (k = 0; k < height; k++)
-	{
-		for (l = 0; l < width; l++)
-		{
-			a[k][l] = 0;
-		}
-	}
-
-	return (a);
+	s[k] = '\0';
+	return (s);
 }
