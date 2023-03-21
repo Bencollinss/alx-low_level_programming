@@ -5,49 +5,50 @@ int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 
 /**
- * new_dog - a function that creates a new dog
- * @name: name of the  dog
- * @age: age of the dog
- * @owner: owner of the dog
- *
- * Return: Nothing
- */
+  * new_dog - ...
+  * @name: ...
+  * @age: ...
+  * @owner: ...
+  *
+  * Return: ...
+  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *doggi;
-	int name_1 = 0, own_1 = 0;
+	dog_t *cutie_dog;
+	int name_l = 0, own_l = 0;
 
 	if (name != NULL && owner != NULL)
 	{
 		name_l = _strlen(name) + 1;
 		own_l = _strlen(owner) + 1;
-		doggi = malloc(sizeof(dog_t));
+		cutie_dog = malloc(sizeof(dog_t));
 
-		if (doggi == NULL)
+		if (cutie_dog == NULL)
 			return (NULL);
 
-		doggi->name = malloc(sizeof(char) * name_1);
+		cutie_dog->name = malloc(sizeof(char) * name_l);
 
-		if (doggi->name == NULL)
+		if (cutie_dog->name == NULL)
 		{
-			free(doggi);
+			free(cutie_dog);
 			return (NULL);
 		}
 
-		doggi->owner = malloc(sizeof(char) * own_1);
+		cutie_dog->owner = malloc(sizeof(char) * own_l);
 
-		if (doggi->owner == NULL)
+		if (cutie_dog->owner == NULL)
 		{
-			free(doggi->name);
-			free(doggi);
+			free(cutie_dog->name);
+			free(cutie_dog);
 			return (NULL);
 		}
 
-		doggi->name = _strcpy(doggi->name, name);
-		doggi->owner = _strcpy(doggi->owner, owner);
-		doggi->age = age;
+		cutie_dog->name = _strcpy(cutie_dog->name, name);
+		cutie_dog->owner = _strcpy(cutie_dog->owner, owner);
+		cutie_dog->age = age;
 	}
-	return (doggi);
+
+	return (cutie_dog);
 }
 
 /**
