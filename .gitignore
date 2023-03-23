@@ -1,0 +1,3 @@
+# THIS FILE SPECIFIES THE FILE PATTERNS TO IGNORE
+
+*.swp # Recovery file created by vi/vim
