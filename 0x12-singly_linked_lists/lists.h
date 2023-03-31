@@ -1,13 +1,6 @@
 #ifndef _LINKED_LIST
 #define _LINKED_LIST
 
-/* These are my header files
- */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -19,9 +12,9 @@
  */
 typedef struct list_s
 {
-        char *str;
-        unsigned int len;
-        struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 int _strlen(const char *s);
