@@ -1,47 +1,94 @@
 #include "lists.h"
-#include "files.h"
 
-/* #include "files.c" */
 
 /**
- * free_listint_safe - frees a lisint_t list even if it has a loop
- * @h: address of pointer to head
+ * looped_listint_count - Counts the number of unique nodes
+ *                      in a looped listint_t linked list.
+ * @head: A pointer to the head of the listint_t to check.
  *
- * Description: the function goes through the list once
- * And sets the head to NULL
- * Return: size of the list that was free'd
+ * Return: If the list is not looped - 0.
+ *         Otherwise - the number of unique nodes in the list.
+ */
+size_t looped_listint_count(listint_t *head)
+{
+	listint_t *tortoise, *hare;
+	size_t nodes = 1;
+
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	tortoise = head->next;
+	hare = (head->next)->next;
+
+	while (hare)
+	{
+		if (tortoise == hare)
+		{
+			tortoise = head;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+			}
+
+			return (nodes);
+		}
+
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
+	}
+
+	return (0);
+}
+
+/**
+ * free_listint_safe - Frees a listint_t list safely (ie.
+ *                     can free lists containing loops)
+ * @h: A pointer to the address of
+ *     the head of the listint_t list.
+ *
+ * Return: The size of the list that was freed.
+ *
+ * Description: The function sets the head to NULL.
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *tmp = 0;
-	address_t *addr_head = 0;
-	size_t count = 0;
+	listint_t *tmp;
+	size_t nodes, index;
 
-	if (!h)
+	nodes = looped_listint_count(*h);
+
+	if (nodes == 0)
 	{
-		return (0);
+		for (; h != NULL && *h != NULL; nodes++)
+		{
+			tmp = (*h)->next;
+			free(*h);
+			*h = tmp;
+		}
 	}
 
-	for (tmp = (*h); (*h);)
+	else
 	{
+		for (index = 0; index < nodes; index++)
+		{
+			tmp = (*h)->next;
+			free(*h);
+			*h = tmp;
+		}
 
-		if (_find_node_addr(addr_head, (*h)))
-		{
-			/* encountered a loop in the list */
-			(*h) = NULL;	/* setting head to NULL */
-			return (count * sizeof(listint_t));
-		}
-		if (!_add_node_addr(&addr_head, (*h)))
-		{
-			exit(1);
-		}
-		tmp = (*h);
-		(*h) = (*h)->next;
-		free(tmp);
+		*h = NULL;
 	}
 
-	_free_list_addr(&addr_head);
-	(*h) = NULL;	/* setting head to NULL */
+	h = NULL;
 
-	return (count * sizeof(listint_t));
+	return (nodes);
 }
