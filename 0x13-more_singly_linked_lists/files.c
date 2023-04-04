@@ -2,7 +2,7 @@
 #define _FILES_C
 
 
-#include "lists.h"
+#include "files.h"
 
 /**
  * _add_node_addr - adds node to an address_t list,
