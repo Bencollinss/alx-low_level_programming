@@ -1,30 +1,39 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
+#include "files.c"
 
 /**
- * print_listint_safe - Prints a listint_t linked list.
- * @head: A pointer to the head of the list.
+ *  print_listint_safe -...
+ *  @head: ...
  *
- * Return: The number of nodes in the list.
+ *  Return:...
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current;
+	address_t *addr_head = 0;
 	size_t count = 0;
 
-	current = head;
-	while (current != NULL)
+	if (!head)
 	{
-	printf("[%p] %d\n", (void *)current, current->n);
-	count++;
-	if (current <= current->next)
+		/* check wrong input */
+		exit(98);
+	}
+
+	for (; head; head = head->next, count++)
 	{
-	printf("-> [%p] %d\n", (void *)current->next, current->next->n);
-	break;
+		if (_find_node_addr(addr_head, head))
+		{
+			/* encountered a loop in the list */
+			printf("-> [0x%p] %d\n", (void *)head, head->n);
+			return (count);
+		}
+		if (!_add_node_addr(&addr_head, head))
+		{
+			exit(98);
+		}
+		printf("[0x%p] %d\n", (void *)head, head->n);
 	}
-	current = current->next;
-	}
+
+	_free_list_addr(&addr_head);
 
 	return (count);
 }
