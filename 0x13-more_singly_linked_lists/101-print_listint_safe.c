@@ -1,13 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
+
 #include "files.c"
 
 /**
- *  print_listint_safe -...
- *  @head: ...
+ * print_listint_safe - prints a listint_t linked list
+ * @head: points to head node
  *
- *  Return:...
+ * Description: The function can print lists with a loop
+ * It goes through the list only once
+ *
+ * Return: the number of nodes in the list
+ * else, exit the program with exit status 98
  */
 size_t print_listint_safe(const listint_t *head)
 {

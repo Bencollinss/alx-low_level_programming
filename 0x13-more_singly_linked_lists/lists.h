@@ -2,6 +2,9 @@
 #define _LISTS_H
 
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #define UNUSED __attribute((unused))
 
 int _putchar(char c);
