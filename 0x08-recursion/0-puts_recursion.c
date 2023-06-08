@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * main - a function that prints a string
@@ -13,6 +13,7 @@ void _puts_recursion(char *s)
 		_putchar('\n');
 		return;
 	}
+
 	_putchar(*s);
 	s++;
 	_puts_recursion(s);
