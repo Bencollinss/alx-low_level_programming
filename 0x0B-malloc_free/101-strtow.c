@@ -74,7 +74,7 @@ char **strtow(char *str)
 	arr = malloc((len + 1) * sizeof(char *));
 	for (arr_step = 0; arr_step < len; arr_step++)
 	{
-		for (;str[str_step] != '\0';)
+		for (; str[str_step] != '\0';)
 		{
 			if (!_isspace(str[str_step]))
 			{
