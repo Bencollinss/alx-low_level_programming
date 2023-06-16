@@ -6,3 +6,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+int _isdigit(char *argv);
+int _atoi(char *s);
+int main(int argc, char *argv[]);
