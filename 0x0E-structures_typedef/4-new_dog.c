@@ -1,12 +1,12 @@
 #include "dog.h"
 
 /**
- * new_dog -  allocates and initializes memory for the new dog
+ * new_dog - allocates and initializes memory for a new dog entry
  * @name: the name of the dog
  * @age: the age of the dog
  * @owner: the owner of the dog
  *
- * Return: Nothing
+ * Return: pointer to struct dog, returns 0 if function fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
