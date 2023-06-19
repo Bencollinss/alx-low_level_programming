@@ -1,6 +1,7 @@
 #include "dog.h"
 
-/** print_dog - prints all the info of a dog
+/**
+ * print_dog - prints all the info of a dog
  * @d: The structure
  *
  * Return: Nothing
